@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="uz">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assistly — Aqlli Biznes Yordamchisi</title>
+        <meta
+            name="description"
+            content="Telegram, Instagram, WhatsApp va saytingiz uchun AI yordamchi. Mijozlaringizga 24/7 avtomatik javob bering."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+        <nav>
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-icon">⚡</div>
+                Assistly
+            </a>
+            <div class="nav-links">
+                <a href="#features" data-i18n="nav.features">Imkoniyatlar</a>
+                <a href="#how" data-i18n="nav.how">Qanday ishlaydi</a>
+                <a href="#pricing" data-i18n="nav.pricing">Narxlar</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" data-i18n="nav.contact">Bog'lanish</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-btn active" onclick="setLang('uz')">
+                    UZ
+                </button>
+                <button class="lang-btn" onclick="setLang('ru')">RU</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+                <a href="/login" class="btn-outline" data-i18n="nav.login"
+                    >Kirish</a
+                >
+                <a href="/register" class="btn-primary" data-i18n="nav.start"
+                    >Boshlash →</a
+                >
+            </div>
+        </nav>
+
+        <!-- ─── HERO ───────────────────────────────────────────── -->
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="hero-glow"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div style="position: relative; z-index: 1; width: 100%">
+                <div class="hero-badge">
+                    <div class="hero-badge-dot"></div>
+                    <span data-i18n="hero.badge"
+                        >Yangi: Instagram DM integratsiyasi</span
+                    >
+                </div>
+                <h1 data-i18n="hero.title">
+                    Biznesingiz uchun<br /><span>Aqlli Yordamchi</span>
+                </h1>
+                <p class="hero-desc" data-i18n="hero.desc">
+                    Telegram, Instagram, WhatsApp va saytingiz uchun AI
+                    yordamchi. Mijozlaringizga 24/7 avtomatik javob bering,
+                    qabul yozing, savollarga javob bering.
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="/register"
+                        class="btn-primary-lg"
+                        data-i18n="hero.cta"
+                        >Bepul boshlash →</a
+                    >
+                    <a href="#how" class="btn-outline-lg" data-i18n="hero.demo"
+                        >Qanday ishlaydi</a
+                    >
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">500+</div>
+                        <div class="hero-stat-label" data-i18n="stats.clients">
+                            Faol klientlar
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            width: 1px;
+                            height: 40px;
+                            background: var(--border);
+                        "
+                    ></div>
+                    <div>
+                        <div class="hero-stat-num">2M+</div>
+                        <div class="hero-stat-label" data-i18n="stats.messages">
+                            Javob berilgan xabarlar
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            width: 1px;
+                            height: 40px;
+                            background: var(--border);
+                        "
+                    ></div>
+                    <div>
+                        <div class="hero-stat-num">98%</div>
+                        <div
+                            class="hero-stat-label"
+                            data-i18n="stats.satisfaction"
+                        >
+                            Mijozlar mamnuniyati
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            width: 1px;
+                            height: 40px;
+                            background: var(--border);
+                        "
+                    ></div>
+                    <div>
+                        <div class="hero-stat-num">24/7</div>
+                        <div class="hero-stat-label" data-i18n="stats.support">
+                            Uzluksiz xizmat
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CHANNELS STRIP ────────────────────────────────── -->
+        <div class="channels-strip">
+            <div class="channels-strip-inner">
+                <div class="channel-item">
+                    <span class="channel-icon">✈️</span> Telegram
+                </div>
+                <div class="channel-item">
+                    <span class="channel-icon">📱</span> WhatsApp
+                </div>
+                <div class="channel-item">
+                    <span class="channel-icon">📸</span> Instagram
+                </div>
+                <div class="channel-item">
+                    <span class="channel-icon">🌐</span> Web Widget
+                </div>
+                <div class="channel-item">
+                    <span class="channel-icon">🤖</span> AI Assistant
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── FEATURES ──────────────────────────────────────── -->
+        <section id="features">
+            <div class="container">
+                <div style="text-align: center">
+                    <div class="section-badge" data-i18n="features.badge">
+                        ✦ Imkoniyatlar
+                    </div>
+                    <h2 class="section-title" data-i18n="features.title">
+                        Biznesingizni <span>avtomatlashtiring</span>
+                    </h2>
+                    <p
+                        class="section-desc"
+                        style="margin: 0 auto"
+                        data-i18n="features.desc"
+                    >
+                        Har qanday soha uchun tayyor yechim — klinika, savdo,
+                        yuridik, ta'lim va boshqalar.
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-title" data-i18n="f1.title">
+                            AI Yordamchi
+                        </div>
+                        <div class="feature-desc" data-i18n="f1.desc">
+                            GPT-4 va Claude AI asosida aqlli javoblar.
+                            Biznesingiz haqida har qanday savolga to'g'ri javob
+                            beradi.
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <div class="feature-title" data-i18n="f2.title">
+                            Qabul Tizimi
+                        </div>
+                        <div class="feature-desc" data-i18n="f2.desc">
+                            Mijozlar to'g'ridan-to'g'ri bot orqali qabulga
+                            yoziladi. Shifokor, mutaxassis yoki xizmat turini
+                            tanlaydi.
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🕐</div>
+                        <div class="feature-title" data-i18n="f3.title">
+                            Ish Vaqtlari
+                        </div>
+                        <div class="feature-desc" data-i18n="f3.desc">
+                            Ish vaqtini sozlang — bot faqat kerakli vaqtda javob
+                            beradi. Dam olish kunlarida avtomatik xabar
+                            yuboradi.
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title" data-i18n="f4.title">
+                            Analitika
+                        </div>
+                        <div class="feature-desc" data-i18n="f4.desc">
+                            Xabarlar, suhbatlar va qabullar bo'yicha batafsil
+                            statistika. Biznesingizni rivojlantiring.
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <div class="feature-title" data-i18n="f5.title">
+                            Bot Builder
+                        </div>
+                        <div class="feature-desc" data-i18n="f5.desc">
+                            Kod yozmasdan bot yarating. Soha bo'yicha tayyor
+                            templatelar — klinika, savdo, yuridik va boshqalar.
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <div class="feature-title" data-i18n="f6.title">
+                            Ko'p Kanal
+                        </div>
+                        <div class="feature-desc" data-i18n="f6.desc">
+                            Telegram, WhatsApp, Instagram va web saytingizni
+                            bitta dashboarddan boshqaring.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── HOW IT WORKS ──────────────────────────────────── -->
+        <section id="how" class="how-bg">
+            <div class="container">
+                <div style="text-align: center">
+                    <div class="section-badge" data-i18n="how.badge">
+                        ✦ Jarayon
+                    </div>
+                    <h2 class="section-title" data-i18n="how.title">
+                        4 qadamda <span>ishga tushiring</span>
+                    </h2>
+                    <p
+                        class="section-desc"
+                        style="margin: 0 auto"
+                        data-i18n="how.desc"
+                    >
+                        O'rnatish 10 daqiqa. Texnik bilim shart emas.
+                    </p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-title" data-i18n="step1.title">
+                            Ro'yxatdan o'ting
+                        </div>
+                        <div class="step-desc" data-i18n="step1.desc">
+                            Bepul hisob yarating va biznesingizni qo'shing.
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-title" data-i18n="step2.title">
+                            Kanal ulang
+                        </div>
+                        <div class="step-desc" data-i18n="step2.desc">
+                            Telegram, Instagram yoki boshqa kanalingizni ulang.
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-title" data-i18n="step3.title">
+                            Bot sozlang
+                        </div>
+                        <div class="step-desc" data-i18n="step3.desc">
+                            Sohangizga mos templateni tanlang va sozlang.
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">4</div>
+                        <div class="step-title" data-i18n="step4.title">
+                            Ishga tushiring
+                        </div>
+                        <div class="step-desc" data-i18n="step4.desc">
+                            Bot 24/7 mijozlaringizga javob bera boshlaydi.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PRICING ───────────────────────────────────────── -->
+        <section id="pricing">
+            <div class="container">
+                <div style="text-align: center">
+                    <div class="section-badge" data-i18n="pricing.badge">
+                        ✦ Narxlar
+                    </div>
+                    <h2 class="section-title" data-i18n="pricing.title">
+                        Oddiy va <span>shaffof narxlar</span>
+                    </h2>
+                    <p
+                        class="section-desc"
+                        style="margin: 0 auto"
+                        data-i18n="pricing.desc"
+                    >
+                        Yashirin to'lovlar yo'q. Istalgan vaqt o'zgartiring yoki
+                        bekor qiling.
+                    </p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-plan">Starter</div>
+                        <div class="pricing-price">$9 <span>/oy</span></div>
+                        <div class="pricing-desc" data-i18n="p1.desc">
+                            Kichik biznes uchun ideal boshlang'ich
+                        </div>
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p1.f1">1 ta kanal</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p1.f2">500 xabar/oy</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p1.f3">Asosiy AI</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p1.f4">Email support</span>
+                            </div>
+                        </div>
+                        <a
+                            href="/register"
+                            class="pricing-btn pricing-btn-outline"
+                            data-i18n="pricing.choose"
+                            >Tanlash</a
+                        >
+                    </div>
+                    <div class="pricing-card popular">
+                        <div class="pricing-badge" data-i18n="pricing.popular">
+                            Eng mashhur
+                        </div>
+                        <div class="pricing-plan">Pro</div>
+                        <div class="pricing-price">$29 <span>/oy</span></div>
+                        <div class="pricing-desc" data-i18n="p2.desc">
+                            O'sib borayotgan biznes uchun
+                        </div>
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p2.f1">4 ta kanal</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p2.f2">10,000 xabar/oy</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p2.f3">Kuchli AI (GPT-4)</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p2.f4">Priority support</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p2.f5">Analitika</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p2.f6">Qabul tizimi</span>
+                            </div>
+                        </div>
+                        <a
+                            href="/register"
+                            class="pricing-btn pricing-btn-filled"
+                            data-i18n="pricing.choose"
+                            >Tanlash</a
+                        >
+                    </div>
+                    <div class="pricing-card">
+                        <div class="pricing-plan">Enterprise</div>
+                        <div class="pricing-price">$99 <span>/oy</span></div>
+                        <div class="pricing-desc" data-i18n="p3.desc">
+                            Katta kompaniyalar uchun
+                        </div>
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p3.f1">Cheksiz kanallar</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p3.f2">Cheksiz xabarlar</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p3.f3">Custom AI</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p3.f4">Dedicated support</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p3.f5">White-label</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <span class="pricing-feature-check">✓</span>
+                                <span data-i18n="p3.f6">API kirish</span>
+                            </div>
+                        </div>
+                        <a
+                            href="/register"
+                            class="pricing-btn pricing-btn-outline"
+                            data-i18n="pricing.choose"
+                            >Tanlash</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── TESTIMONIALS ──────────────────────────────────── -->
+        <section id="testimonials" class="testimonials-bg">
+            <div class="container">
+                <div style="text-align: center">
+                    <div class="section-badge" data-i18n="t.badge">
+                        ✦ Mijozlar fikri
+                    </div>
+                    <h2 class="section-title" data-i18n="t.title">
+                        Ular allaqachon <span>ishlatmoqda</span>
+                    </h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-text" data-i18n="t1.text">
+                            "Assistly orqali kuniga 200+ xabarga javob beramiz.
+                            Operator ish yukini 70% kamaytirdi. Juda qulay!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div
+                                class="testimonial-avatar"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #63d2aa,
+                                        #4f8ef7
+                                    );
+                                "
+                            >
+                                A
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Aziz Karimov</div>
+                                <div
+                                    class="testimonial-role"
+                                    data-i18n="t1.role"
+                                >
+                                    MedLine Klinika — Direktor
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-text" data-i18n="t2.text">
+                            "Bot Builder juda oson. 30 daqiqada klinikamiz uchun
+                            to'liq bot sozladim. Qabul tizimi zo'r ishlaydi!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div
+                                class="testimonial-avatar"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #f5a524,
+                                        #f26b6b
+                                    );
+                                "
+                            >
+                                N
+                            </div>
+                            <div>
+                                <div class="testimonial-name">
+                                    Nilufar Rashidova
+                                </div>
+                                <div
+                                    class="testimonial-role"
+                                    data-i18n="t2.role"
+                                >
+                                    DentaCare — Bosh shifokor
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-text" data-i18n="t3.text">
+                            "Telegram va Instagram ni bir joydan boshqarish juda
+                            qulay. Savdo hajmimiz 40% oshdi!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div
+                                class="testimonial-avatar"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #ec407a,
+                                        #9c27b0
+                                    );
+                                "
+                            >
+                                S
+                            </div>
+                            <div>
+                                <div class="testimonial-name">
+                                    Sardor Toshmatov
+                                </div>
+                                <div
+                                    class="testimonial-role"
+                                    data-i18n="t3.role"
+                                >
+                                    TechStore — Marketing
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FAQ ───────────────────────────────────────────── -->
+        <section id="faq">
+            <div class="container" style="text-align: center">
+                <div class="section-badge">✦ FAQ</div>
+                <h2 class="section-title" data-i18n="faq.title">
+                    Ko'p so'raladigan <span>savollar</span>
+                </h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq1.q"
+                                >Bepul sinab ko'rish mumkinmi?</span
+                            >
+                            <span class="faq-arrow">↓</span>
+                        </div>
+                        <div class="faq-answer" data-i18n="faq1.a">
+                            Ha! 14 kunlik bepul sinov davri mavjud. Karta
+                            ma'lumotlari talab qilinmaydi. Istalgan vaqt bekor
+                            qilishingiz mumkin.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq2.q"
+                                >Telegram bot tokenini qayerdan olaman?</span
+                            >
+                            <span class="faq-arrow">↓</span>
+                        </div>
+                        <div class="faq-answer" data-i18n="faq2.a">
+                            Telegramda @BotFather ga /newbot yuboring,
+                            ko'rsatmalarga amal qiling. Token bir necha daqiqada
+                            tayyor bo'ladi.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq3.q"
+                                >Bir nechta biznes boshqarish mumkinmi?</span
+                            >
+                            <span class="faq-arrow">↓</span>
+                        </div>
+                        <div class="faq-answer" data-i18n="faq3.a">
+                            Ha, bitta hisob bilan bir nechta biznes qo'shib
+                            boshqarish mumkin. Har bir biznes uchun alohida
+                            kanal va bot sozlash imkoniyati mavjud.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq4.q"
+                                >AI qanday tilda javob beradi?</span
+                            >
+                            <span class="faq-arrow">↓</span>
+                        </div>
+                        <div class="faq-answer" data-i18n="faq4.a">
+                            O'zbek, Rus va Ingliz tillarida. Bot Builder da
+                            tilni sozlash mumkin. AI o'z-o'zidan til tanlash
+                            imkoniyatiga ham ega.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq5.q"
+                                >Operator ham xabar yoza oladimi?</span
+                            >
+                            <span class="faq-arrow">↓</span>
+                        </div>
+                        <div class="faq-answer" data-i18n="faq5.a">
+                            Ha! Bot o'chiq bo'lganda operator to'g'ridan-to'g'ri
+                            mijoz bilan gaplashadi. Bot yoqiq bo'lganda AI javob
+                            beradi.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT ───────────────────────────────────────── -->
+        <section id="contact" class="contact-bg">
+            <div class="container">
+                <div style="text-align: center">
+                    <div class="section-badge" data-i18n="contact.badge">
+                        ✦ Bog'lanish
+                    </div>
+                    <h2 class="section-title" data-i18n="contact.title">
+                        Savollaringiz <span>bormi?</span>
+                    </h2>
+                    <p
+                        class="section-desc"
+                        style="margin: 0 auto"
+                        data-i18n="contact.desc"
+                    >
+                        Biz bilan bog'laning — 24 soat ichida javob beramiz.
+                    </p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">✈️</div>
+                            <div>
+                                <div class="contact-item-title">Telegram</div>
+                                <div class="contact-item-value">
+                                    @assistly_uz
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📧</div>
+                            <div>
+                                <div class="contact-item-title">Email</div>
+                                <div class="contact-item-value">
+                                    info@assistly.uz
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div>
+                                <div
+                                    class="contact-item-title"
+                                    data-i18n="contact.phone"
+                                >
+                                    Telefon
+                                </div>
+                                <div class="contact-item-value">
+                                    +998 90 000 00 00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div>
+                                <div
+                                    class="contact-item-title"
+                                    data-i18n="contact.address"
+                                >
+                                    Manzil
+                                </div>
+                                <div
+                                    class="contact-item-value"
+                                    data-i18n="contact.address.val"
+                                >
+                                    Toshkent, O'zbekiston
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" onsubmit="submitForm(event)">
+                        <div class="form-row">
+                            <input
+                                class="form-input"
+                                type="text"
+                                placeholder="Ismingiz"
+                                data-i18n-placeholder="form.name"
+                                required
+                            />
+                            <input
+                                class="form-input"
+                                type="tel"
+                                placeholder="Telefon"
+                                data-i18n-placeholder="form.phone"
+                                required
+                            />
+                        </div>
+                        <input
+                            class="form-input"
+                            type="email"
+                            placeholder="Email"
+                            required
+                        />
+                        <input
+                            class="form-input"
+                            type="text"
+                            placeholder="Biznesingiz turi"
+                            data-i18n-placeholder="form.business"
+                        />
+                        <textarea
+                            class="form-input"
+                            placeholder="Xabaringiz..."
+                            data-i18n-placeholder="form.message"
+                        ></textarea>
+                        <button
+                            type="submit"
+                            class="btn-primary-lg"
+                            style="width: 100%; justify-content: center"
+                            data-i18n="form.submit"
+                        >
+                            Yuborish →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA ───────────────────────────────────────────── -->
+        <section class="cta-section">
+            <div class="cta-bg"></div>
+            <div class="cta-card" style="position: relative">
+                <div style="font-size: 48px; margin-bottom: 16px">⚡</div>
+                <h2 class="cta-title" data-i18n="cta.title">
+                    Bugunoq boshlang
+                </h2>
+                <p class="cta-desc" data-i18n="cta.desc">
+                    14 kunlik bepul sinov. Karta ma'lumotlari kerak emas.
+                    Istalgan vaqt bekor qiling.
+                </p>
+                <div
+                    style="
+                        display: flex;
+                        gap: 14px;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    "
+                >
+                    <a
+                        href="/register"
+                        class="btn-primary-lg"
+                        data-i18n="cta.btn"
+                        >Bepul boshlash →</a
+                    >
+                    <a
+                        href="#contact"
+                        class="btn-outline-lg"
+                        data-i18n="cta.contact"
+                        >Bog'lanish</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FOOTER ─────────────────────────────────────────── -->
+        <footer>
+            <div class="footer-inner">
+                <a href="#" class="footer-logo">
+                    <div
+                        class="nav-logo-icon"
+                        style="width: 30px; height: 30px; font-size: 14px"
+                    >
+                        ⚡
+                    </div>
+                    Assistly
+                </a>
+                <div class="footer-links">
+                    <a href="#features" data-i18n="nav.features"
+                        >Imkoniyatlar</a
+                    >
+                    <a href="#pricing" data-i18n="nav.pricing">Narxlar</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact" data-i18n="nav.contact">Bog'lanish</a>
+                    <a href="/login" data-i18n="nav.login">Kirish</a>
+                    <a href="/privacy.html">Maxfiylik siyosati</a>
+                    <a href="/terms.html">Foydalanish shartlari</a>
+                </div>
+                <div class="footer-copy">
+                    © 2026 Assistly.
+                    <span data-i18n="footer.rights"
+                        >Barcha huquqlar himoyalangan.</span
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>

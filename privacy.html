@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxfiylik Siyosati — Assistly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080B12; --bg-s: #0E1320; --bg-e: #141928;
+      --border: rgba(255,255,255,0.07);
+      --accent: #63D2AA; --text-1: #F0F2F8; --text-2: #8B93A8; --text-3: #4E5568;
+      --font-d: 'Syne', sans-serif; --font-b: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--text-1); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,11,18,0.9); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-1); font-family: var(--font-d); font-weight: 800; font-size: 18px; }
+    .logo-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg,#63D2AA,#4F8EF7); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .nav-back { color: var(--text-2); text-decoration: none; font-size: 14px; transition: color 0.15s; }
+    .nav-back:hover { color: var(--accent); }
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; }
+    .page-title { font-family: var(--font-d); font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+    .page-title span { background: linear-gradient(135deg,#63D2AA,#4F8EF7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .updated { font-size: 14px; color: var(--text-3); margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .lang-tabs { display: flex; gap: 8px; margin-bottom: 40px; }
+    .lang-tab { padding: 6px 16px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text-2); font-size: 13px; cursor: pointer; font-family: var(--font-b); transition: all 0.15s; }
+    .lang-tab.active { border-color: var(--accent); background: rgba(99,210,170,0.1); color: var(--accent); }
+    .content { display: none; }
+    .content.active { display: block; }
+    h2 { font-family: var(--font-d); font-size: 22px; font-weight: 700; margin: 40px 0 14px; color: var(--text-1); }
+    h2:first-child { margin-top: 0; }
+    p { font-size: 15px; color: var(--text-2); margin-bottom: 14px; }
+    ul { margin: 10px 0 14px 20px; }
+    li { font-size: 15px; color: var(--text-2); margin-bottom: 8px; }
+    .highlight { padding: 20px 24px; background: var(--bg-e); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; margin: 20px 0; }
+    .highlight p { margin: 0; color: var(--text-1); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { border-top: 1px solid var(--border); padding: 32px 5%; text-align: center; }
+    footer p { font-size: 13px; color: var(--text-3); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">⚡</div>
+    Assistly
+  </a>
+  <a href="/" class="nav-back">← Bosh sahifa</a>
+</nav>
+
+<div class="container">
+  <h1 class="page-title"><span>Maxfiylik</span> Siyosati</h1>
+  <p class="updated">Oxirgi yangilanish: 9 Aprel 2026</p>
+
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="setLang('uz')">O'zbekcha</button>
+    <button class="lang-tab" onclick="setLang('ru')">Русский</button>
+    <button class="lang-tab" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- O'zbek -->
+  <div class="content active" id="uz">
+    <div class="highlight">
+      <p>Assistly sizning maxfiyligingizni hurmat qiladi. Ushbu siyosat platformamizda to'planadigan ma'lumotlar va ulardan foydalanish tartibi haqida ma'lumot beradi.</p>
+    </div>
+
+    <h2>1. To'planadigan ma'lumotlar</h2>
+    <p>Biz quyidagi ma'lumotlarni to'playmiz:</p>
+    <ul>
+      <li><strong>Hisob ma'lumotlari:</strong> ism, email, telefon raqam</li>
+      <li><strong>Biznes ma'lumotlari:</strong> kompaniya nomi, soha, veb-sayt</li>
+      <li><strong>Foydalanish ma'lumotlari:</strong> xabarlar, suhbatlar, analitika</li>
+      <li><strong>Texnik ma'lumotlar:</strong> IP manzil, brauzer turi, qurilma ma'lumotlari</li>
+    </ul>
+
+    <h2>2. Ma'lumotlardan foydalanish</h2>
+    <p>To'plangan ma'lumotlar quyidagi maqsadlarda ishlatiladi:</p>
+    <ul>
+      <li>Assistly xizmatlarini taqdim etish va yaxshilash</li>
+      <li>Texnik yordam ko'rsatish</li>
+      <li>Xavfsizlikni ta'minlash</li>
+      <li>Platforma faoliyatini tahlil qilish</li>
+      <li>Qonuniy majburiyatlarni bajarish</li>
+    </ul>
+
+    <h2>3. Ma'lumotlarni saqlash</h2>
+    <p>Sizning ma'lumotlaringiz xavfsiz serverlarda saqlanadi. Biz sanoat standartlariga mos xavfsizlik choralarini qo'llaymiz: SSL shifrlash, parollar xeshlash (bcrypt), ma'lumotlar bazasi xavfsizligi.</p>
+
+    <h2>4. Uchinchi tomon xizmatlar</h2>
+    <p>Assistly quyidagi uchinchi tomon xizmatlaridan foydalanadi:</p>
+    <ul>
+      <li><strong>Telegram API</strong> — bot integratsiyasi uchun</li>
+      <li><strong>Meta (Instagram) API</strong> — Instagram DM uchun</li>
+      <li><strong>OpenAI API</strong> — AI javoblar uchun</li>
+    </ul>
+    <p>Bu xizmatlar o'zlarining maxfiylik siyosatiga ega. Biz foydalanuvchi ma'lumotlarini ularning roziligisiz uchinchi tomonlarga sotmaymiz.</p>
+
+    <h2>5. Cookie fayllari</h2>
+    <p>Biz autentifikatsiya va foydalanuvchi tajribasini yaxshilash uchun cookie fayllaridan foydalanamiz. Brauzer sozlamalarida cookielarni o'chirib qo'yishingiz mumkin, lekin bu ba'zi funksiyalarga ta'sir qilishi mumkin.</p>
+
+    <h2>6. Foydalanuvchi huquqlari</h2>
+    <p>Siz quyidagi huquqlarga egasiz:</p>
+    <ul>
+      <li>Ma'lumotlaringizga kirish va ko'rish</li>
+      <li>Ma'lumotlaringizni yangilash yoki to'g'rilash</li>
+      <li>Hisobingizni va ma'lumotlaringizni o'chirish</li>
+      <li>Ma'lumotlaringizni eksport qilish</li>
+    </ul>
+
+    <h2>7. Ma'lumotlarni o'chirish</h2>
+    <p>Hisobingizni o'chirmoqchi bo'lsangiz, <a href="mailto:info@assistly.uz">info@assistly.uz</a> ga murojaat qiling. Barcha ma'lumotlaringiz 30 kun ichida o'chiriladi.</p>
+
+    <h2>8. Bolalar maxfiyligi</h2>
+    <p>Assistly 16 yoshdan kichik foydalanuvchilar uchun mo'ljallanmagan. Biz ataylab 16 yoshdan kichik shaxslardan ma'lumot to'plamaymiz.</p>
+
+    <h2>9. Siyosat o'zgarishlari</h2>
+    <p>Ushbu siyosat vaqti-vaqti bilan yangilanishi mumkin. Muhim o'zgarishlar haqida email orqali xabar beramiz.</p>
+
+    <h2>10. Bog'lanish</h2>
+    <p>Savollar uchun: <a href="mailto:info@assistly.uz">info@assistly.uz</a><br>
+    Telegram: <a href="https://t.me/assistly_uz">@assistly_uz</a></p>
+  </div>
+
+  <!-- Русский -->
+  <div class="content" id="ru">
+    <div class="highlight">
+      <p>Assistly уважает вашу конфиденциальность. Данная политика описывает, какие данные мы собираем и как их используем.</p>
+    </div>
+
+    <h2>1. Собираемые данные</h2>
+    <p>Мы собираем следующие данные:</p>
+    <ul>
+      <li><strong>Данные аккаунта:</strong> имя, email, номер телефона</li>
+      <li><strong>Данные бизнеса:</strong> название компании, отрасль, веб-сайт</li>
+      <li><strong>Данные использования:</strong> сообщения, разговоры, аналитика</li>
+      <li><strong>Технические данные:</strong> IP-адрес, тип браузера, данные устройства</li>
+    </ul>
+
+    <h2>2. Использование данных</h2>
+    <p>Собранные данные используются для:</p>
+    <ul>
+      <li>Предоставления и улучшения услуг Assistly</li>
+      <li>Технической поддержки</li>
+      <li>Обеспечения безопасности</li>
+      <li>Анализа работы платформы</li>
+      <li>Соблюдения законодательных требований</li>
+    </ul>
+
+    <h2>3. Хранение данных</h2>
+    <p>Ваши данные хранятся на защищённых серверах. Мы применяем отраслевые стандарты безопасности: SSL-шифрование, хеширование паролей (bcrypt), защита базы данных.</p>
+
+    <h2>4. Сторонние сервисы</h2>
+    <p>Assistly использует следующие сторонние сервисы:</p>
+    <ul>
+      <li><strong>Telegram API</strong> — для интеграции с ботом</li>
+      <li><strong>Meta (Instagram) API</strong> — для Instagram DM</li>
+      <li><strong>OpenAI API</strong> — для AI-ответов</li>
+    </ul>
+    <p>Эти сервисы имеют собственную политику конфиденциальности. Мы не продаём данные пользователей третьим лицам без их согласия.</p>
+
+    <h2>5. Файлы cookie</h2>
+    <p>Мы используем cookie для аутентификации и улучшения пользовательского опыта. Вы можете отключить cookies в настройках браузера, однако это может повлиять на некоторые функции.</p>
+
+    <h2>6. Права пользователей</h2>
+    <p>Вы имеете право:</p>
+    <ul>
+      <li>Просматривать свои данные</li>
+      <li>Обновлять или исправлять данные</li>
+      <li>Удалять аккаунт и данные</li>
+      <li>Экспортировать данные</li>
+    </ul>
+
+    <h2>7. Удаление данных</h2>
+    <p>Для удаления аккаунта обратитесь на <a href="mailto:info@assistly.uz">info@assistly.uz</a>. Все данные будут удалены в течение 30 дней.</p>
+
+    <h2>8. Конфиденциальность детей</h2>
+    <p>Assistly не предназначен для пользователей младше 16 лет. Мы не собираем намеренно данные лиц младше 16 лет.</p>
+
+    <h2>9. Изменения политики</h2>
+    <p>Данная политика может периодически обновляться. О существенных изменениях мы уведомим по email.</p>
+
+    <h2>10. Контакты</h2>
+    <p>По вопросам: <a href="mailto:info@assistly.uz">info@assistly.uz</a><br>
+    Telegram: <a href="https://t.me/assistly_uz">@assistly_uz</a></p>
+  </div>
+
+  <!-- English -->
+  <div class="content" id="en">
+    <div class="highlight">
+      <p>Assistly respects your privacy. This policy describes what data we collect and how we use it.</p>
+    </div>
+
+    <h2>1. Data We Collect</h2>
+    <p>We collect the following data:</p>
+    <ul>
+      <li><strong>Account data:</strong> name, email, phone number</li>
+      <li><strong>Business data:</strong> company name, industry, website</li>
+      <li><strong>Usage data:</strong> messages, conversations, analytics</li>
+      <li><strong>Technical data:</strong> IP address, browser type, device information</li>
+    </ul>
+
+    <h2>2. How We Use Data</h2>
+    <p>Collected data is used to:</p>
+    <ul>
+      <li>Provide and improve Assistly services</li>
+      <li>Provide technical support</li>
+      <li>Ensure security</li>
+      <li>Analyze platform performance</li>
+      <li>Comply with legal requirements</li>
+    </ul>
+
+    <h2>3. Data Storage</h2>
+    <p>Your data is stored on secure servers. We apply industry-standard security measures: SSL encryption, password hashing (bcrypt), database security.</p>
+
+    <h2>4. Third-Party Services</h2>
+    <p>Assistly uses the following third-party services:</p>
+    <ul>
+      <li><strong>Telegram API</strong> — for bot integration</li>
+      <li><strong>Meta (Instagram) API</strong> — for Instagram DM</li>
+      <li><strong>OpenAI API</strong> — for AI responses</li>
+    </ul>
+    <p>These services have their own privacy policies. We do not sell user data to third parties without their consent.</p>
+
+    <h2>5. Cookies</h2>
+    <p>We use cookies for authentication and to improve user experience. You can disable cookies in your browser settings, though this may affect some functionality.</p>
+
+    <h2>6. User Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access and view your data</li>
+      <li>Update or correct your data</li>
+      <li>Delete your account and data</li>
+      <li>Export your data</li>
+    </ul>
+
+    <h2>7. Data Deletion</h2>
+    <p>To delete your account, contact <a href="mailto:info@assistly.uz">info@assistly.uz</a>. All your data will be deleted within 30 days.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>Assistly is not intended for users under 16 years of age. We do not intentionally collect data from persons under 16.</p>
+
+    <h2>9. Policy Changes</h2>
+    <p>This policy may be updated periodically. We will notify you of significant changes via email.</p>
+
+    <h2>10. Contact</h2>
+    <p>For questions: <a href="mailto:info@assistly.uz">info@assistly.uz</a><br>
+    Telegram: <a href="https://t.me/assistly_uz">@assistly_uz</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Assistly. Barcha huquqlar himoyalangan. | <a href="/privacy.html">Maxfiylik</a> | <a href="/terms.html">Foydalanish shartlari</a></p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'))
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'))
+  document.querySelector(`[onclick="setLang('${lang}')"]`).classList.add('active')
+  document.getElementById(lang).classList.add('active')
+}
+</script>
+</body>
+</html>

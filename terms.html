@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foydalanish Shartlari — Assistly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080B12; --bg-s: #0E1320; --bg-e: #141928;
+      --border: rgba(255,255,255,0.07);
+      --accent: #63D2AA; --text-1: #F0F2F8; --text-2: #8B93A8; --text-3: #4E5568;
+      --font-d: 'Syne', sans-serif; --font-b: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--text-1); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,11,18,0.9); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-1); font-family: var(--font-d); font-weight: 800; font-size: 18px; }
+    .logo-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg,#63D2AA,#4F8EF7); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .nav-back { color: var(--text-2); text-decoration: none; font-size: 14px; transition: color 0.15s; }
+    .nav-back:hover { color: var(--accent); }
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; }
+    .page-title { font-family: var(--font-d); font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+    .page-title span { background: linear-gradient(135deg,#63D2AA,#4F8EF7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .updated { font-size: 14px; color: var(--text-3); margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .lang-tabs { display: flex; gap: 8px; margin-bottom: 40px; }
+    .lang-tab { padding: 6px 16px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text-2); font-size: 13px; cursor: pointer; font-family: var(--font-b); transition: all 0.15s; }
+    .lang-tab.active { border-color: var(--accent); background: rgba(99,210,170,0.1); color: var(--accent); }
+    .content { display: none; }
+    .content.active { display: block; }
+    h2 { font-family: var(--font-d); font-size: 22px; font-weight: 700; margin: 40px 0 14px; color: var(--text-1); }
+    h2:first-child { margin-top: 0; }
+    p { font-size: 15px; color: var(--text-2); margin-bottom: 14px; }
+    ul { margin: 10px 0 14px 20px; }
+    li { font-size: 15px; color: var(--text-2); margin-bottom: 8px; }
+    .highlight { padding: 20px 24px; background: var(--bg-e); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; margin: 20px 0; }
+    .highlight p { margin: 0; color: var(--text-1); }
+    .warning { padding: 20px 24px; background: rgba(245,165,36,0.08); border: 1px solid rgba(245,165,36,0.2); border-left: 3px solid #F5A524; border-radius: 8px; margin: 20px 0; }
+    .warning p { margin: 0; color: #F5A524; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { border-top: 1px solid var(--border); padding: 32px 5%; text-align: center; }
+    footer p { font-size: 13px; color: var(--text-3); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">⚡</div>
+    Assistly
+  </a>
+  <a href="/" class="nav-back">← Bosh sahifa</a>
+</nav>
+
+<div class="container">
+  <h1 class="page-title"><span>Foydalanish</span> Shartlari</h1>
+  <p class="updated">Oxirgi yangilanish: 9 Aprel 2026</p>
+
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="setLang('uz')">O'zbekcha</button>
+    <button class="lang-tab" onclick="setLang('ru')">Русский</button>
+    <button class="lang-tab" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- O'zbek -->
+  <div class="content active" id="uz">
+    <div class="highlight">
+      <p>Assistly platformasidan foydalanib, siz ushbu foydalanish shartlarini qabul qilasiz. Iltimos, diqqat bilan o'qing.</p>
+    </div>
+
+    <h2>1. Xizmat haqida</h2>
+    <p>Assistly — bizneslar uchun Telegram, Instagram, WhatsApp va veb-sayt orqali AI yordamchi platformasi. Biz quyidagi xizmatlarni taqdim etamiz:</p>
+    <ul>
+      <li>Telegram bot integratsiyasi</li>
+      <li>Instagram DM avtomatlashtirish</li>
+      <li>AI asosidagi javob tizimi</li>
+      <li>Qabul va buyurtma boshqaruvi</li>
+      <li>Analitika va hisobotlar</li>
+    </ul>
+
+    <h2>2. Ro'yxatdan o'tish</h2>
+    <p>Platformadan foydalanish uchun:</p>
+    <ul>
+      <li>Kamida 18 yoshda bo'lishingiz kerak</li>
+      <li>To'g'ri va to'liq ma'lumot kiritishingiz kerak</li>
+      <li>Hisob xavfsizligini ta'minlash sizning mas'uliyatingiz</li>
+      <li>Bir kishi bir nechta hisob ochishi mumkin emas</li>
+    </ul>
+
+    <h2>3. Tarif rejalari va to'lovlar</h2>
+    <p>Assistly quyidagi tarif rejalarini taklif etadi:</p>
+    <ul>
+      <li><strong>Starter:</strong> $9/oy — kichik bizneslar uchun</li>
+      <li><strong>Pro:</strong> $29/oy — o'sib borayotgan bizneslar uchun</li>
+      <li><strong>Enterprise:</strong> $99/oy — katta kompaniyalar uchun</li>
+    </ul>
+    <p>To'lovlar oylik amalga oshiriladi. Istalgan vaqt obunani bekor qilish mumkin. Bekor qilingan oyning qolgan qismi uchun to'lov qaytarilmaydi.</p>
+
+    <h2>2. Ruxsat etilmagan harakatlar</h2>
+    <div class="warning">
+      <p>⚠️ Quyidagi harakatlar qat'iyan man etiladi!</p>
+    </div>
+    <ul>
+      <li>Spam yuborish yoki ommaviy so'rovsiz xabarlar</li>
+      <li>Platformani noto'g'ri maqsadlarda ishlatish</li>
+      <li>Boshqa foydalanuvchilarning ma'lumotlarini o'g'irlash</li>
+      <li>Tizimga ruxsatsiz kirish yoki buzish urinishlari</li>
+      <li>Qonunga zid kontent tarqatish</li>
+      <li>Assistly nomidan noto'g'ri da'volar qilish</li>
+    </ul>
+
+    <h2>5. Kontent mas'uliyati</h2>
+    <p>Platforma orqali yuborilgan barcha kontent uchun foydalanuvchi o'zi mas'ul. Assistly:</p>
+    <ul>
+      <li>Foydalanuvchi kontentini nazorat qilmaydi</li>
+      <li>Qonunga zid kontent uchun javobgar emas</li>
+      <li>Qoidabuzarlik aniqlanganda hisobni bloklash huquqiga ega</li>
+    </ul>
+
+    <h2>6. Xizmat uzilishi</h2>
+    <p>Biz 99.9% uptime kafolat berishga harakat qilamiz. Lekin texnik ishlar yoki force majeure holatlarida xizmat vaqtincha to'xtashi mumkin. Bunday holatlarda to'lov qaytarilmaydi.</p>
+
+    <h2>7. Intellektual mulk</h2>
+    <p>Assistly platformasi, logotipi, dizayni va kodlari bizga tegishli. Foydalanuvchi o'z kontenti ustidan huquqlarini saqlab qoladi.</p>
+
+    <h2>8. Hisobni o'chirish</h2>
+    <p>Siz istalgan vaqt hisobingizni o'chirishingiz mumkin. Biz ham qoidabuzarlik aniqlanganda hisobni o'chirish huquqiga egamiz. Hisob o'chirilgandan so'ng ma'lumotlar 30 kun ichida o'chiriladi.</p>
+
+    <h2>9. Javobgarlik cheklovlari</h2>
+    <p>Assistly quyidagilar uchun javobgar emas:</p>
+    <ul>
+      <li>Foydalanuvchi xatolari natijasida yuzaga kelgan zararlar</li>
+      <li>Uchinchi tomon xizmatlarining uzilishi (Telegram, Meta va h.k.)</li>
+      <li>Foydalanuvchi kontentidan kelib chiqadigan huquqiy muammolar</li>
+    </ul>
+
+    <h2>10. Shartlarni o'zgartirish</h2>
+    <p>Biz ushbu shartlarni istalgan vaqt o'zgartirish huquqiga egamiz. Muhim o'zgarishlar haqida 30 kun oldin email orqali xabar beramiz.</p>
+
+    <h2>11. Bog'lanish</h2>
+    <p>Savollar uchun: <a href="mailto:info@assistly.uz">info@assistly.uz</a><br>
+    Telegram: <a href="https://t.me/assistly_uz">@assistly_uz</a></p>
+  </div>
+
+  <!-- Русский -->
+  <div class="content" id="ru">
+    <div class="highlight">
+      <p>Используя платформу Assistly, вы принимаете настоящие условия использования. Пожалуйста, прочитайте их внимательно.</p>
+    </div>
+
+    <h2>1. О сервисе</h2>
+    <p>Assistly — платформа AI-ассистента для бизнеса через Telegram, Instagram, WhatsApp и веб-сайт. Мы предоставляем:</p>
+    <ul>
+      <li>Интеграцию с Telegram-ботом</li>
+      <li>Автоматизацию Instagram DM</li>
+      <li>AI-систему ответов</li>
+      <li>Управление записями и заказами</li>
+      <li>Аналитику и отчёты</li>
+    </ul>
+
+    <h2>2. Регистрация</h2>
+    <p>Для использования платформы:</p>
+    <ul>
+      <li>Вам должно быть не менее 18 лет</li>
+      <li>Необходимо указать правдивые данные</li>
+      <li>Безопасность аккаунта — ваша ответственность</li>
+      <li>Одному лицу разрешён один аккаунт</li>
+    </ul>
+
+    <h2>3. Тарифы и оплата</h2>
+    <p>Assistly предлагает следующие тарифы:</p>
+    <ul>
+      <li><strong>Starter:</strong> $9/мес — для малого бизнеса</li>
+      <li><strong>Pro:</strong> $29/мес — для растущего бизнеса</li>
+      <li><strong>Enterprise:</strong> $99/мес — для крупных компаний</li>
+    </ul>
+    <p>Оплата производится ежемесячно. Подписку можно отменить в любое время. Оплата за оставшийся период не возвращается.</p>
+
+    <h2>4. Запрещённые действия</h2>
+    <div class="warning">
+      <p>⚠️ Следующие действия строго запрещены!</p>
+    </div>
+    <ul>
+      <li>Рассылка спама или нежелательных сообщений</li>
+      <li>Использование платформы в незаконных целях</li>
+      <li>Кража данных других пользователей</li>
+      <li>Попытки взлома или несанкционированного доступа</li>
+      <li>Распространение незаконного контента</li>
+      <li>Ложные заявления от имени Assistly</li>
+    </ul>
+
+    <h2>5. Ответственность за контент</h2>
+    <p>Пользователь несёт ответственность за весь контент, отправленный через платформу. Assistly:</p>
+    <ul>
+      <li>Не контролирует контент пользователей</li>
+      <li>Не несёт ответственности за незаконный контент</li>
+      <li>Вправе заблокировать аккаунт при нарушении правил</li>
+    </ul>
+
+    <h2>6. Перебои в работе</h2>
+    <p>Мы стремимся обеспечить 99.9% uptime. Однако технические работы или форс-мажор могут привести к временной остановке. В таких случаях оплата не возвращается.</p>
+
+    <h2>7. Интеллектуальная собственность</h2>
+    <p>Платформа Assistly, логотип, дизайн и код принадлежат нам. Пользователь сохраняет права на собственный контент.</p>
+
+    <h2>8. Удаление аккаунта</h2>
+    <p>Вы можете удалить аккаунт в любое время. Мы также вправе удалить аккаунт при нарушении правил. После удаления данные удаляются в течение 30 дней.</p>
+
+    <h2>9. Ограничение ответственности</h2>
+    <p>Assistly не несёт ответственности за:</p>
+    <ul>
+      <li>Убытки из-за ошибок пользователя</li>
+      <li>Перебои в работе сторонних сервисов (Telegram, Meta и др.)</li>
+      <li>Правовые проблемы, связанные с контентом пользователя</li>
+    </ul>
+
+    <h2>10. Изменение условий</h2>
+    <p>Мы вправе изменить условия в любое время. О существенных изменениях уведомим за 30 дней по email.</p>
+
+    <h2>11. Контакты</h2>
+    <p>По вопросам: <a href="mailto:info@assistly.uz">info@assistly.uz</a><br>
+    Telegram: <a href="https://t.me/assistly_uz">@assistly_uz</a></p>
+  </div>
+
+  <!-- English -->
+  <div class="content" id="en">
+    <div class="highlight">
+      <p>By using the Assistly platform, you agree to these Terms of Service. Please read them carefully.</p>
+    </div>
+
+    <h2>1. About the Service</h2>
+    <p>Assistly is an AI assistant platform for businesses via Telegram, Instagram, WhatsApp, and website. We provide:</p>
+    <ul>
+      <li>Telegram bot integration</li>
+      <li>Instagram DM automation</li>
+      <li>AI-based response system</li>
+      <li>Appointment and order management</li>
+      <li>Analytics and reports</li>
+    </ul>
+
+    <h2>2. Registration</h2>
+    <p>To use the platform:</p>
+    <ul>
+      <li>You must be at least 18 years old</li>
+      <li>You must provide accurate and complete information</li>
+      <li>Account security is your responsibility</li>
+      <li>One person may not create multiple accounts</li>
+    </ul>
+
+    <h2>3. Pricing and Payments</h2>
+    <p>Assistly offers the following plans:</p>
+    <ul>
+      <li><strong>Starter:</strong> $9/mo — for small businesses</li>
+      <li><strong>Pro:</strong> $29/mo — for growing businesses</li>
+      <li><strong>Enterprise:</strong> $99/mo — for large companies</li>
+    </ul>
+    <p>Payments are made monthly. You may cancel your subscription at any time. No refunds are provided for the remaining period after cancellation.</p>
+
+    <h2>4. Prohibited Actions</h2>
+    <div class="warning">
+      <p>⚠️ The following actions are strictly prohibited!</p>
+    </div>
+    <ul>
+      <li>Sending spam or unsolicited bulk messages</li>
+      <li>Using the platform for illegal purposes</li>
+      <li>Stealing other users' data</li>
+      <li>Unauthorized access or hacking attempts</li>
+      <li>Distributing illegal content</li>
+      <li>Making false claims on behalf of Assistly</li>
+    </ul>
+
+    <h2>5. Content Responsibility</h2>
+    <p>Users are responsible for all content sent through the platform. Assistly:</p>
+    <ul>
+      <li>Does not monitor user content</li>
+      <li>Is not liable for illegal content</li>
+      <li>Has the right to block accounts for violations</li>
+    </ul>
+
+    <h2>6. Service Interruptions</h2>
+    <p>We aim to provide 99.9% uptime. However, technical maintenance or force majeure may cause temporary outages. No refunds are provided in such cases.</p>
+
+    <h2>7. Intellectual Property</h2>
+    <p>The Assistly platform, logo, design, and code belong to us. Users retain rights to their own content.</p>
+
+    <h2>8. Account Deletion</h2>
+    <p>You may delete your account at any time. We also reserve the right to delete accounts for violations. After deletion, data is removed within 30 days.</p>
+
+    <h2>9. Limitation of Liability</h2>
+    <p>Assistly is not liable for:</p>
+    <ul>
+      <li>Damages resulting from user errors</li>
+      <li>Third-party service outages (Telegram, Meta, etc.)</li>
+      <li>Legal issues arising from user content</li>
+    </ul>
+
+    <h2>10. Changes to Terms</h2>
+    <p>We reserve the right to modify these terms at any time. We will notify you of significant changes 30 days in advance via email.</p>
+
+    <h2>11. Contact</h2>
+    <p>For questions: <a href="mailto:info@assistly.uz">info@assistly.uz</a><br>
+    Telegram: <a href="https://t.me/assistly_uz">@assistly_uz</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Assistly. Barcha huquqlar himoyalangan. | <a href="/privacy.html">Maxfiylik</a> | <a href="/terms.html">Foydalanish shartlari</a></p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'))
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'))
+  document.querySelector(`[onclick="setLang('${lang}')"]`).classList.add('active')
+  document.getElementById(lang).classList.add('active')
+}
+</script>
+</body>
+</html>
