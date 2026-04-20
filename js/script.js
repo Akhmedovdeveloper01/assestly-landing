@@ -32,6 +32,18 @@ const i18n = {
         "f5.desc": "Kod yozmasdan bot yarating.",
         "f6.title": "Ko'p Kanal",
         "f6.desc": "Barcha kanallarni bir joydan boshqaring.",
+        "f7.title": "Mijozlar Bazasi",
+        "f7.desc": "Barcha mijozlaringizni bitta joyda saqlang. Tarix, buyurtmalar va shartnomalarni kuzatib boring.",
+        "f8.title": "Mahsulot va Buyurtmalar",
+        "f8.desc": "Mahsulot katalogi, kategoriyalar va buyurtmalar tizimi. Bot orqali to'g'ridan-to'g'ri buyurtma olish.",
+        "f9.title": "Shartnomalar",
+        "f9.desc": "Shartnomalarni raqamli boshqaring. PDF eksport, status kuzatish va xodimlar bo'yicha statistika.",
+        "f10.title": "Xodimlar Tizimi",
+        "f10.desc": "Xodimlarni lavozimlar bo'yicha boshqaring. Har bir xodimning shartnoma va ish ko'rsatkichlarini kuzating.",
+        "f11.title": "Filiallar",
+        "f11.desc": "Bir nechta joylashuv va filiallarni boshqaring. Har bir filialning holati va ish vaqtini sozlang.",
+        "f12.title": "Operator Paneli",
+        "f12.desc": "Operator mijoz bilan bevosita gaplashadi. Bot va operator rejimini bir tugma bilan almashtiring.",
         "how.badge": "✦ Jarayon",
         "how.title": "4 qadamda <span>ishga tushiring</span>",
         "how.desc": "O'rnatish 10 daqiqa. Texnik bilim shart emas.",
@@ -138,6 +150,18 @@ const i18n = {
         "f5.desc": "Создайте бот без программирования.",
         "f6.title": "Мультиканал",
         "f6.desc": "Управляйте всеми каналами из одного места.",
+        "f7.title": "База клиентов",
+        "f7.desc": "Храните всех клиентов в одном месте. Отслеживайте историю, заказы и договоры.",
+        "f8.title": "Товары и заказы",
+        "f8.desc": "Каталог товаров, категории и система заказов. Принимайте заказы прямо через бот.",
+        "f9.title": "Договоры",
+        "f9.desc": "Управляйте договорами цифрово. Экспорт PDF, отслеживание статуса и статистика по сотрудникам.",
+        "f10.title": "Система сотрудников",
+        "f10.desc": "Управляйте сотрудниками по должностям. Отслеживайте договоры и показатели каждого сотрудника.",
+        "f11.title": "Филиалы",
+        "f11.desc": "Управляйте несколькими локациями и филиалами. Настройте статус и рабочее время каждого.",
+        "f12.title": "Панель оператора",
+        "f12.desc": "Оператор общается с клиентом напрямую. Переключайте режим бот/оператор одной кнопкой.",
         "how.badge": "✦ Процесс",
         "how.title": "Запустите за <span>4 шага</span>",
         "how.desc": "Установка 10 минут. Технические знания не нужны.",
@@ -244,6 +268,18 @@ const i18n = {
         "f5.desc": "Create a bot without coding.",
         "f6.title": "Multi-channel",
         "f6.desc": "Manage all channels from one place.",
+        "f7.title": "Client Database",
+        "f7.desc": "Keep all your clients in one place. Track history, orders and contracts.",
+        "f8.title": "Products & Orders",
+        "f8.desc": "Product catalog, categories and order system. Accept orders directly through the bot.",
+        "f9.title": "Contracts",
+        "f9.desc": "Manage contracts digitally. PDF export, status tracking and employee statistics.",
+        "f10.title": "Employee System",
+        "f10.desc": "Manage employees by positions. Track contracts and performance metrics for each employee.",
+        "f11.title": "Branches",
+        "f11.desc": "Manage multiple locations and branches. Configure the status and working hours of each.",
+        "f12.title": "Operator Panel",
+        "f12.desc": "Operator chats directly with the client. Switch between bot and operator mode with one button.",
         "how.badge": "✦ Process",
         "how.title": "Launch in <span>4 steps</span>",
         "how.desc": "Setup takes 10 minutes. No technical skills needed.",
@@ -365,6 +401,81 @@ function submitForm(e) {
         e.target.reset();
     }, 3000);
 }
+
+// ─── DYNAMIC PRICING ────────────────────────────────────────
+const POPULAR_KEYS = ['pro', 'professional']
+
+function formatFeatures(plan) {
+    const lines = []
+    const f = plan.features || {}
+    const l = plan.limits || {}
+
+    if (l.channels != null) lines.push(l.channels === -1 ? (currentLang === 'ru' ? 'Безлимит каналы' : currentLang === 'en' ? 'Unlimited channels' : 'Cheksiz kanallar') : `${l.channels} ${currentLang === 'ru' ? 'канал' : currentLang === 'en' ? 'channel(s)' : 'ta kanal'}`)
+    if (l.messages_per_month != null) lines.push(l.messages_per_month === -1 ? (currentLang === 'ru' ? 'Безлимит сообщения' : currentLang === 'en' ? 'Unlimited messages' : 'Cheksiz xabarlar') : `${l.messages_per_month.toLocaleString()} ${currentLang === 'ru' ? 'сообщ/мес' : currentLang === 'en' ? 'messages/mo' : 'xabar/oy'}`)
+    if (f.ai_assistant) lines.push(currentLang === 'ru' ? 'AI Ассистент' : currentLang === 'en' ? 'AI Assistant' : 'AI Yordamchi')
+    if (f.appointments) lines.push(currentLang === 'ru' ? 'Система записи' : currentLang === 'en' ? 'Appointment system' : 'Qabul tizimi')
+    if (f.analytics) lines.push(currentLang === 'ru' ? 'Аналитика' : currentLang === 'en' ? 'Analytics' : 'Analitika')
+    if (f.bot_builder) lines.push('Bot Builder')
+    if (f.products) lines.push(currentLang === 'ru' ? 'Товары и заказы' : currentLang === 'en' ? 'Products & orders' : 'Mahsulot va buyurtmalar')
+    if (f.employees) lines.push(currentLang === 'ru' ? 'Сотрудники' : currentLang === 'en' ? 'Employees' : 'Xodimlar')
+    if (f.contracts) lines.push(currentLang === 'ru' ? 'Договоры' : currentLang === 'en' ? 'Contracts' : 'Shartnomalar')
+    if (f.white_label) lines.push('White-label')
+    if (f.api_access) lines.push(currentLang === 'ru' ? 'API доступ' : currentLang === 'en' ? 'API access' : 'API kirish')
+    if (f.dedicated_support) lines.push(currentLang === 'ru' ? 'Выделенная поддержка' : currentLang === 'en' ? 'Dedicated support' : 'Maxsus qo\'llab-quvvatlash')
+    else if (f.priority_support) lines.push(currentLang === 'ru' ? 'Приоритетная поддержка' : currentLang === 'en' ? 'Priority support' : 'Imtiyozli qo\'llab-quvvatlash')
+    else lines.push(currentLang === 'ru' ? 'Email поддержка' : currentLang === 'en' ? 'Email support' : 'Email support')
+
+    return lines
+}
+
+function renderPricing(plans) {
+    const grid = document.getElementById('pricing-grid')
+    if (!grid || !plans.length) return
+
+    const chooseLabel = { uz: 'Tanlash', ru: 'Выбрать', en: 'Choose' }
+    const perMonth = { uz: '/oy', ru: '/мес', en: '/mo' }
+    const popularLabel = { uz: 'Eng mashhur', ru: 'Популярный', en: 'Most popular' }
+
+    grid.innerHTML = plans.map(plan => {
+        const isPopular = POPULAR_KEYS.includes(plan.key)
+        const price = plan.price_usd != null ? `$${plan.price_usd}` : (plan.price_uzs ? `${plan.price_uzs.toLocaleString()} so'm` : currentLang === 'ru' ? 'Бесплатно' : currentLang === 'en' ? 'Free' : 'Bepul')
+        const features = formatFeatures(plan)
+        const featuresHtml = features.map(f => `<div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>${f}</span></div>`).join('')
+        const btnClass = isPopular ? 'pricing-btn-filled' : 'pricing-btn-outline'
+        const description = plan.description || ''
+
+        return `<div class="pricing-card${isPopular ? ' popular' : ''}">
+            ${isPopular ? `<div class="pricing-badge">${popularLabel[currentLang]}</div>` : ''}
+            <div class="pricing-plan">${plan.name}</div>
+            <div class="pricing-price">${price} <span>${perMonth[currentLang]}</span></div>
+            ${description ? `<div class="pricing-desc">${description}</div>` : ''}
+            <div class="pricing-features">${featuresHtml}</div>
+            <a href="/register" class="pricing-btn ${btnClass}">${chooseLabel[currentLang]}</a>
+        </div>`
+    }).join('')
+
+    // Re-observe new cards for scroll animation
+    grid.querySelectorAll('.pricing-card').forEach(el => {
+        el.style.opacity = '0'
+        el.style.transform = 'translateY(24px)'
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease'
+        observer.observe(el)
+    })
+}
+
+async function loadPricing() {
+    try {
+        const res = await fetch('/api/plans')
+        if (!res.ok) return
+        const json = await res.json()
+        const active = (json.data || []).filter(p => p.is_active !== false && p.key !== 'trial')
+        if (active.length) renderPricing(active)
+    } catch (e) {
+        // fallback to static HTML on error
+    }
+}
+
+loadPricing()
 
 // Scroll animations
 const observer = new IntersectionObserver(
