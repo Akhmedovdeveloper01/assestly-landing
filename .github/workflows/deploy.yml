@@ -13,7 +13,7 @@ jobs:
         with:
           host: 45.130.148.212
           username: root
-          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/assistly-landing
             git stash
