@@ -37,10 +37,10 @@
                 </button>
                 <button class="lang-btn" onclick="setLang('ru')">RU</button>
                 <button class="lang-btn" onclick="setLang('en')">EN</button>
-                <a href="/login" class="btn-outline" data-i18n="nav.login"
+                <a href="#contact" class="btn-outline" data-i18n="nav.login"
                     >Kirish</a
                 >
-                <a href="/register" class="btn-primary" data-i18n="nav.start"
+                <a href="#contact" class="btn-primary" data-i18n="nav.start"
                     >Boshlash →</a
                 >
             </div>
@@ -69,7 +69,7 @@
                 </p>
                 <div class="hero-actions">
                     <a
-                        href="/register"
+                        href="#contact"
                         class="btn-primary-lg"
                         data-i18n="hero.cta"
                         >Bepul boshlash →</a
@@ -418,7 +418,7 @@
                             <div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>Asosiy AI</span></div>
                             <div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>Email support</span></div>
                         </div>
-                        <a href="/register" class="pricing-btn pricing-btn-outline">Tanlash</a>
+                        <a href="#contact" class="pricing-btn pricing-btn-outline">Tanlash</a>
                     </div>
                     <div class="pricing-card popular">
                         <div class="pricing-badge">Eng mashhur</div>
@@ -433,7 +433,7 @@
                             <div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>Analitika</span></div>
                             <div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>Qabul tizimi</span></div>
                         </div>
-                        <a href="/register" class="pricing-btn pricing-btn-filled">Tanlash</a>
+                        <a href="#contact" class="pricing-btn pricing-btn-filled">Tanlash</a>
                     </div>
                     <div class="pricing-card">
                         <div class="pricing-plan">Enterprise</div>
@@ -447,7 +447,7 @@
                             <div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>White-label</span></div>
                             <div class="pricing-feature"><span class="pricing-feature-check">✓</span><span>API kirish</span></div>
                         </div>
-                        <a href="/register" class="pricing-btn pricing-btn-outline">Tanlash</a>
+                        <a href="#contact" class="pricing-btn pricing-btn-outline">Tanlash</a>
                     </div>
                 </div>
             </div>
@@ -719,6 +719,7 @@
                             <input
                                 class="form-input"
                                 type="text"
+                                name="name"
                                 placeholder="Ismingiz"
                                 data-i18n-placeholder="form.name"
                                 required
@@ -726,6 +727,7 @@
                             <input
                                 class="form-input"
                                 type="tel"
+                                name="phone"
                                 placeholder="Telefon"
                                 data-i18n-placeholder="form.phone"
                                 required
@@ -734,20 +736,24 @@
                         <input
                             class="form-input"
                             type="email"
+                            name="email"
                             placeholder="Email"
                             required
                         />
                         <input
                             class="form-input"
                             type="text"
+                            name="business"
                             placeholder="Biznesingiz turi"
                             data-i18n-placeholder="form.business"
                         />
                         <textarea
                             class="form-input"
+                            name="message"
                             placeholder="Xabaringiz..."
                             data-i18n-placeholder="form.message"
                         ></textarea>
+                        <div class="form-error" style="display: none; color: #f26b6b; font-size: 14px"></div>
                         <button
                             type="submit"
                             class="btn-primary-lg"
@@ -782,7 +788,7 @@
                     "
                 >
                     <a
-                        href="/register"
+                        href="#contact"
                         class="btn-primary-lg"
                         data-i18n="cta.btn"
                         >Bepul boshlash →</a
@@ -816,7 +822,7 @@
                     <a href="#pricing" data-i18n="nav.pricing">Narxlar</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact" data-i18n="nav.contact">Bog'lanish</a>
-                    <a href="/login" data-i18n="nav.login">Kirish</a>
+                    <a href="#contact" data-i18n="nav.login">Kirish</a>
                     <a href="/privacy.html">Maxfiylik siyosati</a>
                     <a href="/terms.html">Foydalanish shartlari</a>
                 </div>

@@ -112,6 +112,9 @@ const i18n = {
         "form.business": "Biznesingiz turi",
         "form.message": "Xabaringiz...",
         "form.submit": "Yuborish →",
+        "form.sending": "Yuborilmoqda...",
+        "form.sent": "✓ Yuborildi!",
+        "form.error": "Xatolik yuz berdi. Qaytadan urinib ko'ring yoki Telegram orqali yozing.",
         "cta.title": "Bugunoq boshlang",
         "cta.desc": "14 kunlik bepul sinov. Karta kerak emas.",
         "cta.btn": "Bepul boshlash →",
@@ -230,6 +233,9 @@ const i18n = {
         "form.business": "Тип бизнеса",
         "form.message": "Ваше сообщение...",
         "form.submit": "Отправить →",
+        "form.sending": "Отправка...",
+        "form.sent": "✓ Отправлено!",
+        "form.error": "Произошла ошибка. Попробуйте снова или напишите в Telegram.",
         "cta.title": "Начните сегодня",
         "cta.desc": "14 дней бесплатно. Карта не нужна.",
         "cta.btn": "Начать бесплатно →",
@@ -348,6 +354,9 @@ const i18n = {
         "form.business": "Business type",
         "form.message": "Your message...",
         "form.submit": "Send →",
+        "form.sending": "Sending...",
+        "form.sent": "✓ Sent!",
+        "form.error": "Something went wrong. Please try again or message us on Telegram.",
         "cta.title": "Start today",
         "cta.desc": "14 days free. No card required.",
         "cta.btn": "Start for free →",
@@ -391,15 +400,49 @@ function toggleFaq(el) {
 }
 
 // Form submit
-function submitForm(e) {
+async function submitForm(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = "✓ Yuborildi!";
-    btn.style.background = "linear-gradient(135deg, #63D2AA, #4F8EF7)";
-    setTimeout(() => {
-        btn.textContent = i18n[currentLang]["form.submit"] || "Yuborish →";
-        e.target.reset();
-    }, 3000);
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const errorEl = form.querySelector('.form-error');
+    const t = (key, fallback) => i18n[currentLang][key] || fallback;
+
+    const payload = {
+        name: form.elements.name.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        email: form.elements.email.value.trim(),
+        business: form.elements.business.value.trim(),
+        message: form.elements.message.value.trim(),
+    };
+
+    errorEl.style.display = "none";
+    btn.disabled = true;
+    const originalBg = btn.style.background;
+    btn.textContent = t("form.sending", "Yuborilmoqda...");
+
+    try {
+        const res = await fetch("/api/leads", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error("request failed");
+
+        btn.textContent = t("form.sent", "✓ Yuborildi!");
+        btn.style.background = "linear-gradient(135deg, #63D2AA, #4F8EF7)";
+        setTimeout(() => {
+            btn.textContent = t("form.submit", "Yuborish →");
+            btn.style.background = originalBg;
+            btn.disabled = false;
+            form.reset();
+        }, 3000);
+    } catch (err) {
+        errorEl.textContent = t("form.error", "Xatolik yuz berdi. Qaytadan urinib ko'ring.");
+        errorEl.style.display = "block";
+        btn.textContent = t("form.submit", "Yuborish →");
+        btn.disabled = false;
+    }
 }
 
 // ─── DYNAMIC PRICING ────────────────────────────────────────
@@ -450,7 +493,7 @@ function renderPricing(plans) {
             <div class="pricing-price">${price} <span>${perMonth[currentLang]}</span></div>
             ${description ? `<div class="pricing-desc">${description}</div>` : ''}
             <div class="pricing-features">${featuresHtml}</div>
-            <a href="/register" class="pricing-btn ${btnClass}">${chooseLabel[currentLang]}</a>
+            <a href="#contact" class="pricing-btn ${btnClass}">${chooseLabel[currentLang]}</a>
         </div>`
     }).join('')
 
